@@ -25,4 +25,4 @@ jobs:
           echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' > serviceAccount.json
 
       - name: Send notifications
-        run: node scripts/sendNotifications.js
+        run: node scripts/sendNotifications.cjs
