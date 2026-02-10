@@ -20,9 +20,7 @@ jobs:
       - name: Install deps
         run: npm install firebase-admin
 
-      - name: Write service account
-        run: |
-          echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' > serviceAccount.json
-
       - name: Send notifications
         run: node scripts/sendNotifications.cjs
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
